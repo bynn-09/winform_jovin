@@ -14,7 +14,7 @@ namespace Tugas_Pak_Selamet
         public static string Tanggal { get; set; }
         public static string KotaAsal { get; set; }
         public static string KotaTujuan { get; set; }
-        public static string Kursi { get; set; }
+        public static string KodeKursi { get; set; }
         public static double TotalHarga { get; set; }
         public static string MetodePembayaran { get; set; }
         public static string JamKeberangkatan { get; set; }

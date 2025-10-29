@@ -15,27 +15,11 @@ namespace Tugas_Pak_Selamet
         public Form4()
         {
             InitializeComponent();
+            cmbMetode.Items.AddRange(new object[] { "Kartu Kredit", "E-Wallet" });
+            total_harga.Text = "Rp " + DataPemesan.TotalHarga.ToString();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbMetode.Items.AddRange(new string[] { "Kartu Kredit", "E-Wallet" });
-
-            int hargaPerPenumpang = 100000;
-            int hargaTambahan = 0;
-            switch (DataPemesan.KotaTujuan)
-            {
-                case "Bekasi": hargaTambahan = 50000; break;
-                case "Solo": hargaTambahan = 80000; break;
-                case "Yogyakarta": hargaTambahan = 100000; break;
-                case "Bogor": hargaTambahan = 50000; break;
-                case "Bandung": hargaTambahan = 80000; break;
-                case "Surabaya": hargaTambahan = 100000; break;
-            }
-
-            DataPemesan.TotalHarga = (hargaPerPenumpang + hargaTambahan) * DataPemesan.JumlahPenumpang;
-            lblHarga.Text = "Rp " + DataPemesan.TotalHarga.ToString("NO");
-        }
+        
 
         private void BtnKonfirmasi(object sender, EventArgs e)
         {

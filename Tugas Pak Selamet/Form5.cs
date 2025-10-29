@@ -16,16 +16,23 @@ namespace Tugas_Pak_Selamet
         {
             InitializeComponent();
         }
-    private void Form5_Load(object sender, EventArgs e)
+        private void Form5_Load(object sender, EventArgs e)
         {
-            lblNama.Text = DataPemesan.NamaPemesan;
-            lblTelp.Text = DataPemesan.NomorTelp;
-            lblJumlah.Text = DataPemesan.JumlahPenumpang.ToString();
-            lblAsal.Text = DataPemesan.KotaAsal;
-            lblJam.Text = DataPemesan.JamKeberangkatan;
-            lblKursi.Text = DataPemesan.Kursi;
-            lblTotal.Text = "Rp " + DataPemesan.TotalHarga.ToString();
-            lblMetode.Text = DataPemesan.MetodePembayaran;
+            l_nama.Text = DataPemesan.NamaPemesan;
+            l_nomor_telp.Text = DataPemesan.NomorTelp;
+            l_jml_pnp.Text = DataPemesan.JumlahPenumpang.ToString();
+            l_kota_asal.Text = DataPemesan.KotaAsal;
+            l_kota_tujuan.Text = DataPemesan.JamKeberangkatan;
+            l_nomor_kursi.Text = DataPemesan.KodeKursi;
+            l_total_harga.Text = "Rp " + DataPemesan.TotalHarga.ToString();
+            l_method_pembayaran.Text = DataPemesan.MetodePembayaran;
+            l_tgl_keberangkatan.Text = DataPemesan.Tanggal;
+            l_jam_keberangkatan.Text = DataPemesan.JamKeberangkatan;
+        }
+
+        private void l_kota_asal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,14 +14,18 @@ namespace Tugas_Pak_Selamet
     {
         public int max_memilih;
         List<Button> pilih_kursi = new List<Button>();
+
         public Form3()
         {
             InitializeComponent();
+            // initialize/clear previous selection when this form is created
+            DataPemesan.KodeKursi = string.Empty;
         }
 
         private void BtnKonfirmasi(object sender, EventArgs e)
-        {
-
+        { 
+            // ensure the latest selection is saved before moving on
+            UpdateKodeKursi();
             Form4 form4 = new Form4();
             form4.Show();
             this.Hide();
@@ -37,6 +41,7 @@ namespace Tugas_Pak_Selamet
                 }
             }
         }
+
         private void Kursi_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -54,13 +59,17 @@ namespace Tugas_Pak_Selamet
                 {
                     pilih_kursi.Add(btn);
                     btn.BackColor = Color.LightGreen;
-
-                }
-                else
-                {
-                    MessageBox.Show("Jumlah kursi melebihi jumlah penumpang");
                 }
             }
+
+            // update stored seat codes every time selection changes
+            UpdateKodeKursi();
+        }
+
+        // store selected seat codes as a comma-separated string like "A1, B2"
+        private void UpdateKodeKursi()
+        {
+            DataPemesan.KodeKursi = string.Join(", ", pilih_kursi.Select(b => b.Text));
         }
     }
 }
